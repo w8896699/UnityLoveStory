@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     // [SerializeField] Collider2D bodyCollider;
     
     [SerializeField] float deathKnockbackForce = 10f;
+    [SerializeField] AudioClip PlayerDeathAudio;
         public static bool isAlive = true;
             Vector2 directionOfLaunch;
  
@@ -54,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
         {
 
             myAnimator.SetBool("Die", true);
+         AudioSource.PlayClipAtPoint(PlayerDeathAudio, Camera.main.transform.position);
             isAlive = false;
 
             Vector2 deathKnockback = new Vector2(-Mathf.Sign(directionOfLaunch.x) * deathKnockbackForce, deathKnockbackForce * 1);

@@ -74,6 +74,7 @@ public class Player : MonoBehaviour
         if(Input.GetButtonDown("Jump") && extraJumps > 0){    
             myRigidBody.velocity = Vector2.up * jumpSpeed;
             extraJumps--;
+            
             // FindObjectOfType<VerticalPlatfrom>().effector2D.rotationalOffset = 0;
             // Debug.Log( myRigidBody.velocity);
         }
